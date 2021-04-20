@@ -1,4 +1,4 @@
-package com.GameServer.Question;
+package com.GameServer.Concept.Question;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

@@ -1,13 +1,12 @@
 package com.GameServer.Feedback;
 
 import com.GameServer.Client;
+import com.GameServer.Concept.QuizRoom.Room;
 import com.GameServer.Exceptions.QuestionRunningOutException;
-import com.GameServer.Room.Room;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
 import java.util.Map;
 
 /**

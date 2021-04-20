@@ -14,6 +14,7 @@ public class Client {
 	 */
 	private Session session;
 	private int avatarId = 1;
+	// for multi-player quiz
 	private boolean isInQuiz = false;
 	private boolean isReadyQuiz = false;
 

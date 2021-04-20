@@ -1,11 +1,10 @@
 package com.GameServer.Method;
 
 import com.GameServer.Client;
+import com.GameServer.Concept.QuizRoom.Room;
+import com.GameServer.Concept.QuizRoom.RoomList;
 import com.GameServer.Feedback.Feedback;
 import com.GameServer.Feedback.RoomJoinedFeedback;
-import com.GameServer.Method.Method;
-import com.GameServer.Room.Room;
-import com.GameServer.Room.RoomList;
 
 public class JoinRoomMethod extends Method {
 

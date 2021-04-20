@@ -1,7 +1,7 @@
 package com.GameServer.Feedback;
 
 import com.GameServer.Client;
-import com.GameServer.Room.Room;
+import com.GameServer.Concept.QuizRoom.Room;
 import org.json.JSONObject;
 
 import java.nio.charset.StandardCharsets;
@@ -17,7 +17,7 @@ public class RoomJoinedFeedback extends Feedback {
 		this.room = room;
 	}
 
-	public Client getNewUser() {
+    public Client getNewUser() {
 		return this.newUser;
 	}
 

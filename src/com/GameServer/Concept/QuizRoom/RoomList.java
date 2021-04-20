@@ -1,9 +1,8 @@
-package com.GameServer.Room;
+package com.GameServer.Concept.QuizRoom;
 
 import com.GameServer.Client;
 
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.logging.Logger;
 
 public class RoomList {

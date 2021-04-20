@@ -1,11 +1,9 @@
-package com.GameServer.Room;
+package com.GameServer.Concept.QuizRoom;
 
 import com.GameServer.Client;
 import com.GameServer.Exceptions.QuestionRunningOutException;
-import com.GameServer.Question.Question;
 
 import javax.websocket.Session;
-import javax.websocket.server.PathParam;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.logging.Logger;

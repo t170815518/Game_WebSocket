@@ -3,8 +3,6 @@ package com.GameServer.Method;
 import com.GameServer.Client;
 import com.GameServer.Feedback.Feedback;
 import com.GameServer.Feedback.RoomCreatedFeedback;
-import com.GameServer.Room.Room;
-import com.GameServer.Room.RoomList;
 
 /**
  * User not in multi-player quiz mode can send the com.GameServer.com.GameServer.Method.Method.CreateRoomMethod to Server.
