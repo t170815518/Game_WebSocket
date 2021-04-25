@@ -7,10 +7,16 @@ import java.util.HashMap;
 
 
 public class MultiPlayerRoomList {
-    private HashMap<String, MultiPlayerRoom> rooms;  // Key=>String: room name
+    private HashMap<String, MultiPlayerRoom> rooms = new HashMap<>();  // Key=>String: room name
     private static MultiPlayerRoomList singleton = null;
 
+    /**
+     * Constructor of multi-player rooms. 9 Rooms by default.
+     */
     private MultiPlayerRoomList() {
+        for (int i = 0; i < 10; i++) {
+            rooms.put(String.valueOf(i), new MultiPlayerRoom());
+        }
     }
 
     static public MultiPlayerRoomList getSingleton() {

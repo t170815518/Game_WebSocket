@@ -11,10 +11,12 @@ import java.util.ArrayList;
 
 public class JoinMultiPlayerRoomMethod extends Method{
     private String roomKey;
+    private int avatarId;
 
-    public JoinMultiPlayerRoomMethod(Client from, String roomKey) {
+    public JoinMultiPlayerRoomMethod(Client from, String roomKey, int avatarId) {
         super(from);
         this.roomKey = roomKey;
+        this.avatarId = avatarId;
     }
 
     @Override
@@ -25,7 +27,7 @@ public class JoinMultiPlayerRoomMethod extends Method{
         isMultiListeners = true;
         feedbacksBuffer = new ArrayList<>();
         for (Client user: room.getUsers()) {
-            Feedback feedback = new UserJoinMultiRoomFeedback(user, from);
+            Feedback feedback = new UserJoinMultiRoomFeedback(user, from, avatarId);
             feedbacksBuffer.add(feedback);
         }
 

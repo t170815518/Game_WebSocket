@@ -43,7 +43,9 @@ public class WebSocketServer {
 	@OnMessage
 	public void OnMessage(byte[] message) {
 		String s = new String(message, StandardCharsets.UTF_8);
-		s = s.substring(1, s.length() - 1).replace("\\", "");  // clean-up data for parse
+		if (s.charAt(0) != '{') {
+			s = s.substring(1, s.length() - 1).replace("\\", "");  // clean-up data for parse
+		}
 		logger.info(String.format("Message got from Session: %s", s));
 		JSONObject jsonObject = null;
 
@@ -60,6 +62,7 @@ public class WebSocketServer {
 		}
 		String username = jsonObject.getString("username");
 		String roomId;
+		String roomKey;
 		Client client = null;
 
 		for (Client client1: users) {
@@ -90,6 +93,23 @@ public class WebSocketServer {
 				boolean isCorrect = jsonObject.getBoolean("isCorrect");
 				roomId = jsonObject.getString("roomId");
 				method = new UpdateAttemptMethod(client, isCorrect, roomId);
+				break;
+			// multi-player room functions
+			case "joinMultiPlayerRoom":
+				roomKey = jsonObject.getString("roomKey");
+				Integer avtarId = jsonObject.getInt("avatarId");
+				method = new JoinMultiPlayerRoomMethod(client, roomKey, avtarId);
+				break;
+			case "move":
+				Integer up = jsonObject.getInt("up");
+				Integer right = jsonObject.getInt("right");
+				roomKey = jsonObject.getString("roomKey");
+				method = new MoveMethod(client, up, right, roomKey);
+				break;
+			case "chat":
+				roomKey = jsonObject.getString("roomKey");
+				String messageContent = jsonObject.getString("message");
+				method = new ChatMethod(client, roomKey, messageContent);
 		}
 		Feedback feedback = method.execute();
 		if (!method.isMultiListeners()) {

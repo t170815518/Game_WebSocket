@@ -17,7 +17,7 @@ public class ChatFeedback extends Feedback{
 
     @Override
     public byte[] toBytes() {
-        JSONObject jsonObject = new JSONObject().put("method", "chat").put("from", from.getUsername()).put("content", message);
-        jsonObject.toString().getBytes(StandardCharsets.UTF_8);
+        JSONObject jsonObject = new JSONObject().put("method", "chat").put("username", from.getUsername()).put("content", message);
+        return jsonObject.toString().getBytes(StandardCharsets.UTF_8);
     }
 }

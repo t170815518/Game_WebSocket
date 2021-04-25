@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 
 public class MultiPlayerRoom {
-    private ArrayList<Client> users;
+    private ArrayList<Client> users = new ArrayList<>();
 
     public MultiPlayerRoom() {
     }

@@ -1,6 +1,7 @@
 package com.GameServer.Concept.QuizRoom;
 
 import com.GameServer.Client;
+import com.GameServer.Concept.Question.Question;
 import com.GameServer.Exceptions.QuestionRunningOutException;
 
 import javax.websocket.Session;
